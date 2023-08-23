@@ -19,5 +19,9 @@
 		&:hover, &_active {
 			border-bottom: 2px solid $background-purple;
 		}
+
+		a {
+			text-decoration: none;
+		}
 	}
 }

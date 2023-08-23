@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CommonButtonComponent } from './components/common-button/common-button.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+	{ path: 'home', component: HomePageComponent }
+];
 
 @NgModule({
 	declarations: [
@@ -16,7 +21,8 @@ import { CommonButtonComponent } from './components/common-button/common-button.
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
+		RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })
 	],
 	providers: [],
 	bootstrap: [AppComponent]

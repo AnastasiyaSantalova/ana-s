@@ -4,6 +4,9 @@
 * {
 	margin: 0;
 	padding: 0;
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+
 	font-family: $text-font;
 	color: $font-white;
 }

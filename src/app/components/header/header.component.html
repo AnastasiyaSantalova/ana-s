@@ -5,6 +5,8 @@
 		(click)="setNewActiveItem(item)"
 		[ngClass]="activeItem === item ? 'header-menu__item_active' : ''"
 	>
-		{{item}}
+		<a routerLink="." fragment="{{item}}">
+			{{item}}
+		</a>
 	</span>
 </div>
