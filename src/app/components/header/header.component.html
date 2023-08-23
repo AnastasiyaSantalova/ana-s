@@ -1,0 +1,10 @@
+<div class="header-menu">
+	<span
+		*ngFor="let item of menuItems"
+		class="header-menu__item"
+		(click)="setNewActiveItem(item)"
+		[ngClass]="activeItem === item ? 'header-menu__item_active' : ''"
+	>
+		{{item}}
+	</span>
+</div>
