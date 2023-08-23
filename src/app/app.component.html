@@ -1,12 +1,14 @@
-<div class="main">
-	<header>
+<div class="app-wrapper">
+	<header class="header">
 		<app-header [(activeItem)]="activeMenuItem"></app-header>
 	</header>
-	<main>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
+	<main class="main">
+		<section class="page">
+			<app-home-page></app-home-page>
+		</section>
+		<section class="page"></section>
+		<section class="page"></section>
+		<section class="page"></section>
 	</main>
 	<footer></footer>
 </div>

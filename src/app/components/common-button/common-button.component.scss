@@ -1,0 +1,12 @@
+@import "../../styles/colors.scss";
+
+.common-button {
+	padding: 10px 15px;
+	background-color: $background-purple;
+	border: none;
+	border-radius: 5px;
+
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+}

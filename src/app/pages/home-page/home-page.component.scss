@@ -1,0 +1,39 @@
+.home-page {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__content {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 10px;
+		padding-right: 50px;
+
+		h1 {
+			font-size: 32px;
+			font-weight: normal;
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&_wrapper {
+			width: 350px;
+			height: 350px;
+			border-radius: 50%;
+
+			background-color: black;
+		}
+	}
+}
