@@ -1,0 +1,19 @@
+<article class="portfolio">
+	<div class="portfolio__scroll-container">
+		<span
+			*ngFor="let item of portfolioItems"
+			class="portfolio__scroll-item"
+			(click)="onItemClick(item)"
+		>
+			<span>
+				{{item.name}}
+			</span>
+			<img height="300px" src="{{item.src}}" alt="{{item.name}}">
+		</span>
+	</div>
+	<app-modal-dialog
+		[isModalVisible]="isModalDialgOpen"
+		[item]="currentItem"
+		(onCloseClick)="onCloseModalClick()"
+	></app-modal-dialog>
+</article>

@@ -1,0 +1,15 @@
+<div *ngIf="isModalVisible" class="modal-dialog">
+	<app-close-button
+		class="modal-dialog__close-btn"
+		(onCloseClick)="onCloseButtonClick()"
+	></app-close-button>
+	<div class="modal-dialog__text">
+		<h3>{{item.name}}</h3>
+		<p>{{item.description}}</p>
+	</div>
+	<div class="modal-dialog__carousel">
+		<span class="modal-dialog__big-image">
+			<img src="{{item.src}}" alt="{{item.name}}">
+		</span>
+	</div>
+</div>

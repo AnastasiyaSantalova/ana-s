@@ -1,0 +1,85 @@
+@import "../../styles/colors.scss";
+
+.portfolio {
+	::-webkit-scrollbar {
+		width: 1em;
+	}
+
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__scroll-container {
+		list-style: none;
+		width: min(90vw, 51rem);
+		max-width: 51rem;
+		display: flex;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding-bottom: 2rem;
+
+	}
+
+	&__scroll-item {
+		cursor: pointer;
+		margin-right: 50px;
+		flex: 0 0 45vw;
+		max-width: 18rem;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		height: 20rem;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0%;
+			transform: translate(0%, -50%);
+			height: 100%;
+			width: 100%;
+			background-image: linear-gradient(to right, $background-purple 2%, transparent 60%);
+			z-index: -1;
+		}
+
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			padding: 0.75em;
+			height: 100%;
+			writing-mode: vertical-lr;
+			text-align: center;
+			transform: rotate(180deg);
+		}
+
+		img {
+			display: block;
+			height: 20rem;
+			width: 100%;
+			object-fit: cover;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(0%, -50%);
+			z-index: -2;
+		}
+	}
+}
+
+$list-length: 5;
+
+@media (min-width: 53rem) {
+	@for $i from 1 to $list-length {
+		.portfolio__scroll-item:nth-child(#{$i}) {
+			$left: ($i * 2.2rem) - 2.2rem;
+			left: #{$left};
+		}
+	}
+}

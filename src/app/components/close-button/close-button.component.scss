@@ -1,0 +1,22 @@
+.close-button {
+	button {
+		width: 25px;
+		height: 25px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		img {
+			width: 18px;
+			height: 18px;
+		}
+
+		&:hover img {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

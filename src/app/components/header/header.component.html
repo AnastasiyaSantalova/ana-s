@@ -1,12 +1,11 @@
 <div class="header-menu">
-	<span
-		*ngFor="let item of menuItems"
-		class="header-menu__item"
-		(click)="setNewActiveItem(item)"
-		[ngClass]="activeItem === item ? 'header-menu__item_active' : ''"
-	>
-		<a routerLink="." fragment="{{item}}">
+	<a *ngFor="let item of menuItems" routerLink="." fragment="{{item}}">
+		<span
+			class="header-menu__item"
+			(click)="setNewActiveItem(item)"
+			[ngClass]="activeItem === item ? 'header-menu__item_active' : ''"
+		>
 			{{item}}
-		</a>
-	</span>
+		</span>
+	</a>
 </div>
