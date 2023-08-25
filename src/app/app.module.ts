@@ -13,6 +13,7 @@ import { CloseButtonComponent } from './components/close-button/close-button.com
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { SkillsPageComponent } from './pages/skills-page/skills-page.component';
+import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 
 const routes: Routes = [
 	{ path: 'home', component: HomePageComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
 		CommonButtonComponent,
 		ModalDialogComponent,
 		CloseButtonComponent,
-  SkillsPageComponent
+  SkillsPageComponent,
+  ContactsPageComponent
 	],
 	imports: [
 		BrowserModule,
