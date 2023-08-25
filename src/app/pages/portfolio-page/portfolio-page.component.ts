@@ -19,7 +19,9 @@ export class PortfolioPageComponent {
 	}
 
 	getPortfolioItems(): void {
-		this.portfolioItems = this.portfolioService.getPortfolioItems();
+		this.portfolioService.getPortfolioItems().subscribe(items => {
+            this.portfolioItems = items;
+        });
 	}
 
 	onItemClick(item: any) {

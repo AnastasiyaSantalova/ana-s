@@ -3,3 +3,8 @@ export type PortfolioItem = {
     description: string;
     src: string;
 }
+
+export type TagsCloudItem = {
+    name: string;
+    weight: number;
+}

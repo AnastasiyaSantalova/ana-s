@@ -1,0 +1,51 @@
+$animationDuration: 8s;
+$amount: 9;
+
+.skills {
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__tags-cloud {
+		width: 50%;
+		height: 50%;
+		position: relative;
+		cursor: pointer;
+
+		&:hover .skills__tags-item {
+			animation-duration: calc($animationDuration / 2);
+		}
+	}
+
+	&__tags-item {
+		display: block;
+		position: absolute;
+		animation-name: move;
+		animation-duration: $animationDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+
+		@for $i from 1 through $amount {
+			&:nth-child(#{$i}) {
+				top: random(100) * 1%;
+				left: random(100) * 1%;
+				animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+				animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+				transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+				$x: if(random() > 0.5, -1, 1);
+			}
+		}
+	}
+}
+
+@keyframes move {
+	from {transform: translate3d(0, 0, 0);}
+	20% {transform: translate3d(40px, -40px, 30px);}
+	40% {transform: translate3d(0, 40px, 80px);}
+	60% {transform: translate3d(-55px, 20px, -30px);}
+	80% {transform: translate3d(-10px, -50px, -60px);}
+	to {transform: translate3d(0, 0, 0);}
+}

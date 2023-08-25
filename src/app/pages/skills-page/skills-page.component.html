@@ -1,0 +1,11 @@
+<div class="skills">
+	<div class="skills__tags-cloud">
+		<span
+			*ngFor="let tag of tags"
+			class="skills__tags-item"
+			[ngStyle]="{'font-size': (tag.weight * 4)+'px'}"
+		>
+			{{tag.name}}
+		</span>
+	</div>
+</div>
