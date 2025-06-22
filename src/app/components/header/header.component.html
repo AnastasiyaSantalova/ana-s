@@ -1,11 +1,12 @@
 <div class="header-menu">
-	<a *ngFor="let item of menuItems" routerLink="." fragment="{{item}}">
-		<span
+	<!-- <a *ngFor="let item of menuItems" routerLink="." fragment="{{item}}"> -->
+		<!-- <span
 			class="header-menu__item"
 			(click)="setNewActiveItem(item)"
 			[ngClass]="activeItem === item ? 'header-menu__item_active' : ''"
 		>
 			{{item}}
-		</span>
-	</a>
+		</span> -->
+    <app-button *ngFor="let item of menuItems" [name]="item" type="menu" (onButtonClick)="setNewActiveItem(item)" [disabled]="activeItem === item"></app-button>
+	<!-- </a> -->
 </div>

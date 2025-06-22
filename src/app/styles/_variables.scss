@@ -1,0 +1,10 @@
+/* BUTTONS */
+
+$btn-cta-icon-length: 1em;
+$btn-cta-icon-gap: 10px;
+$btn-cta-border-width: 3px;
+$btn-cta-vertical-padding: 10px;
+$btn-cta-horizontal-padding: 30px;
+
+$btn-cta-onhover-vertical-padding: calc(#{$btn-cta-vertical-padding} - #{$btn-cta-border-width});
+$btn-cta-onhover-horizontal-padding: calc(#{$btn-cta-horizontal-padding} - #{$btn-cta-border-width});

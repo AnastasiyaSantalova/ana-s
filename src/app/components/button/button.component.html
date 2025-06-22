@@ -1,0 +1,12 @@
+<button
+  type="button"
+  [ngClass]="[type, icon ? 'with-icon' : '', disabled ? 'disabled' : '']"
+  class="button"
+  [disabled]="disabled"
+  (click)="onClick($event)"
+>
+	<span class="text">
+    {{ name }}
+  </span>
+  <i *ngIf="icon" class="icon"></i>
+</button>

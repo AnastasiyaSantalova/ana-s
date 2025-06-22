@@ -1,8 +1,7 @@
-<div *ngIf="isModalVisible" class="modal-dialog">
-	<app-close-button
-		class="modal-dialog__close-btn"
-		(onCloseClick)="onCloseButtonClick()"
-	></app-close-button>
+<div *ngIf="item && isModalVisible" class="modal-dialog">
+	<app-button
+		class="modal-dialog__close-btn" type="close" (onButtonClick)="onCloseButtonClick()"
+	></app-button>
 	<div class="modal-dialog__text">
 		<h3>{{item.name}}</h3>
 		<p>{{item.description}}</p>

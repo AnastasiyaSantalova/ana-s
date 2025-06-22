@@ -1,0 +1,86 @@
+@import "../../styles";
+
+.button {
+  cursor: pointer;
+  border: none;
+
+  // CTA Button
+  &.cta {
+    padding: $btn-cta-vertical-padding $btn-cta-horizontal-padding;
+    background-color: $background-purple;
+    border-radius: 50px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: darken($background-purple, 10%);
+    }
+
+    &:focus {
+      padding: $btn-cta-onhover-vertical-padding $btn-cta-onhover-horizontal-padding;
+      border: $btn-cta-border-width solid $background-dark;
+      outline: 2px solid $font-white;
+    }
+
+    // For CTAs with icon
+    &.with-icon {
+      display: flex;
+      align-items: center;
+      gap: $btn-cta-icon-gap;
+
+
+      .text {
+        transition: transform 0.5s ease-out;
+        transform: translateX(calc((#{$btn-cta-icon-length} + #{$btn-cta-icon-gap})/2));
+      }
+
+      .icon {
+        display: block;
+        opacity: 0;
+        transform: translateX(0.5rem);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+        @include icon('', $btn-cta-icon-length);
+      }
+
+      &:hover, &:focus {
+        .text {
+          transform: translateX(0);
+        }
+        .icon {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  // Close Button
+  &.close {
+    @include icon('close', 1.3em);
+
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &.menu {
+    padding: 10px 0;
+		margin: 0 10px;
+    font-size: 14px;
+    background-color: transparent;
+
+		&:hover, &.disabled {
+			border-bottom: 2px solid $background-purple;
+      margin-bottom: -2px;
+		}
+
+    &.disabled {
+      cursor: auto;
+    }
+  }
+}
+

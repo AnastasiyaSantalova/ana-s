@@ -1,0 +1,9 @@
+@mixin icon($iconName, $length: 10px) {
+  width: $length;
+  height: $length;
+
+  background-color: currentColor;
+
+  mask: url('/assets/icons/#{$iconName}.svg') no-repeat center;
+  mask-size: contain;
+}
