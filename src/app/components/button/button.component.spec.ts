@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommonButtonComponent } from './common-button.component';
+import { CommonButtonComponent } from './button.component';
 
 describe('CommonButtonComponent', () => {
 	let component: CommonButtonComponent;

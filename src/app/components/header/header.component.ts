@@ -13,6 +13,12 @@ export class HeaderComponent {
 
 	setNewActiveItem(value: string) {
 		this.activeItem = value;
+    const elementToScroll = document.getElementById(value);
+
+    if (elementToScroll) {
+      elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
 		this.activeItemChange.emit(this.activeItem);
 	}
 }

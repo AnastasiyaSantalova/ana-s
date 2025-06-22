@@ -20,8 +20,8 @@ export class PortfolioPageComponent {
 
 	getPortfolioItems(): void {
 		this.portfolioService.getPortfolioItems().subscribe(items => {
-            this.portfolioItems = items;
-        });
+      this.portfolioItems = [...items];
+    });
 	}
 
 	onItemClick(item: any) {
