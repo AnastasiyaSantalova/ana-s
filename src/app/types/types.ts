@@ -10,3 +10,5 @@ export type TagsCloudItem = {
 }
 
 export type ButtonTypes = 'close' | 'cta' | 'menu';
+
+export type MenuItem = string;

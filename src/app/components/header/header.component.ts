@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MenuItemsService } from 'src/app/services/menu-items.service';
+import { MenuItem } from 'src/app/types/types';
 
 @Component({
 	selector: 'app-header',
@@ -9,7 +11,19 @@ export class HeaderComponent {
 	@Input() activeItem: string;
 	@Output() activeItemChange = new EventEmitter<string>();
 
-	menuItems = ['home', 'portfolio', 'skills', 'contacts'];
+	menuItems: MenuItem[];
+
+  constructor(private menuItemsService: MenuItemsService) {}
+
+  getMenuItems() {
+    this.menuItemsService.getAllMenuItems().subscribe(items => {
+      this.menuItems = [...items];
+    })
+  }
+
+  ngOnInit() {
+    this.getMenuItems();
+  }
 
 	setNewActiveItem(value: string) {
 		this.activeItem = value;
