@@ -12,13 +12,13 @@ export class SkillsPageComponent {
 
 	constructor(private tagsService: TagsService) {}
 
-    getTags() {
-        this.tagsService.getAllTags().subscribe(tags => {
-            this.tags = tags;
-        });
-    }
+  getTags() {
+    this.tagsService.getAllTags().subscribe(tags => {
+      this.tags = tags;
+    });
+  }
 
-    ngOnInit() {
-        this.getTags();
-    }
+  ngOnInit() {
+    this.getTags();
+  }
 }
