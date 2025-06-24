@@ -24,8 +24,8 @@ export class PortfolioPageComponent {
     });
 	}
 
-	onItemClick(item: any) {
-		this.currentItem = item;
+	onItemClick(item: PortfolioItem) {
+		this.currentItem = {...item};
 		this.isModalDialgOpen = true;
 	}
 

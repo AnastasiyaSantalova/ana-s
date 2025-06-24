@@ -1,15 +1,27 @@
-@import "../../styles/colors.scss";
+@import "../../styles";
+
+:host:has(.visible) {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
 .modal-dialog {
-	padding: 80px;
-	width: calc(60vw - 80px);
-	height: calc(35vw - 80px);
-	max-width: 700px;
-	max-height: 400px;
+	padding: 40px;
+  max-height: 45vh;
+  width: 50%;
+  border-radius: 15px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $background-purple transparent;
 
 	background-color: $background-dark-purple;
 
-	position: relative;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
 	display: flex;
 
@@ -20,14 +32,16 @@
 	}
 
 	&__text, &__carousel {
-		width: 50%;
-		height: 100%;
-
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
+
+  &__carousel {
+    position: relative;
+    width: 100%;
+  }
 
 	&__text {
 		padding-right: 30px;
@@ -44,17 +58,52 @@
 	}
 
 	&__big-image {
-		width: 250px;
-		height: 250px;
-		border-radius: 50%;
+		width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    position: relative;
+    z-index: 10;
 
-		display: block;
+    &.expanded {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: auto;
+      border-radius: 0;
+      z-index: 20;
 
-		overflow: hidden;
+      img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+        animation: fly-in 0.6s ease forwards;
+      }
+    }
+
+    &.expanded img {
+      animation: fly-in 0.6s ease forwards;
+    }
 
 		img {
-			width: 250px;
-			height: 250px;
+			width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.6s ease;
 		}
 	}
+}
+
+@keyframes fly-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }

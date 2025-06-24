@@ -1,13 +1,15 @@
-<div *ngIf="item && isModalVisible" class="modal-dialog">
+<div *ngIf="item && isModalVisible" [class.visible]="isModalVisible" class="modal-dialog">
 	<app-button
-		class="modal-dialog__close-btn" type="close" (onButtonClick)="onCloseButtonClick()"
+		class="modal-dialog__close-btn"
+    type="icon-only"
+    (onButtonClick)="onCloseButtonClick()"
 	></app-button>
 	<div class="modal-dialog__text">
 		<h3>{{item.name}}</h3>
 		<p>{{item.description}}</p>
 	</div>
 	<div class="modal-dialog__carousel">
-		<span class="modal-dialog__big-image">
+		<span class="modal-dialog__big-image" [class.expanded]="isImageExpanded" (click)="onImageClick()">
 			<img src="{{item.src}}" alt="{{item.name}}">
 		</span>
 	</div>

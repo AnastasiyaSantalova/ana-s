@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { PortfolioItem } from 'src/app/types/types';
 
 @Component({
@@ -10,8 +10,18 @@ export class ModalDialogComponent {
 	@Input() isModalVisible: boolean = true;
 	@Input() item: PortfolioItem;
 	@Output() onCloseClick = new EventEmitter();
+  protected isImageExpanded: boolean = false;
 
 	onCloseButtonClick() {
 		this.onCloseClick.emit();
 	}
+
+  onImageClick() {
+    this.isImageExpanded = !this.isImageExpanded;
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscapeKey(event: KeyboardEvent) {
+    this.onCloseClick.emit();
+  }
 }

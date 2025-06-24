@@ -1,0 +1,80 @@
+@import '../../styles';
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.carousel-container {
+  display: flex;
+  max-width: 40rem;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE 10+
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+}
+
+.carousel-arrow-wrapper {
+  padding: 20px;
+}
+
+.carousel-item {
+  cursor: pointer;
+  margin-right: 50px;
+  flex: 0 0 45vw;
+  max-width: 18rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 20rem;
+  border-radius: 15px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, $background-purple 2%, transparent 60%);
+    z-index: -1;
+  }
+
+  .carousel-item-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 0.75em;
+    height: 100%;
+    writing-mode: vertical-lr;
+    text-align: center;
+    transform: rotate(180deg);
+  }
+}
+
+$list-length: 9;
+
+@media (min-width: 53rem) {
+	@for $i from 1 to $list-length {
+		.carousel-item:nth-child(#{$i}) {
+			$left: ($i * 2.2rem) - 2.2rem;
+			left: #{$left};
+		}
+	}
+}

@@ -1,0 +1,31 @@
+<div class="carousel-wrapper">
+  <div class="carousel-arrow-wrapper left-button-wrapper">
+    <app-button
+      type="icon-only"
+      icon="angle-left"
+      (onButtonClick)="scrollCarousel('left')"
+    ></app-button>
+  </div>
+
+  <div class="carousel-container" #carousel>
+    <div
+      class="carousel-item"
+      *ngFor="let item of portfolioItems"
+      (click)="onCarouselItemClick($event, item)"
+      (keydown.enter)="onCarouselItemClick($event, item)"
+      tabindex="0"
+    >
+      <span class="carousel-item-name">
+        {{ item.name }}
+      </span>
+    </div>
+  </div>
+
+  <div class="carousel-arrow-wrapper right-button-wrapper">
+    <app-button
+      type="icon-only"
+      icon="angle-right"
+      (onButtonClick)="scrollCarousel('right')"
+    ></app-button>
+  </div>
+</div>
