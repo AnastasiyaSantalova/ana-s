@@ -14,6 +14,7 @@ import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.co
 import { SkillsPageComponent } from './pages/skills-page/skills-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 const routes: Routes = [
 	{ path: 'home', component: HomePageComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
 		ModalDialogComponent,
   SkillsPageComponent,
   ContactsPageComponent,
-  FooterComponent
+  FooterComponent,
+  CarouselComponent
 	],
 	imports: [
 		BrowserModule,

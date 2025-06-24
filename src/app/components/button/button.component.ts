@@ -24,7 +24,7 @@ export class CommonButtonComponent {
 
   ngAfterViewInit() {
     if (this.icon) {
-      const target = this.elem.nativeElement.querySelector('.icon');
+      const target = this.elem.nativeElement.querySelector('.icon-only, .icon');
 
       if (target) {
         target.style.maskImage = `url('/assets/icons/${this.icon}.svg')`;

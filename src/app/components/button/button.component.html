@@ -1,9 +1,12 @@
 <button
   type="button"
-  [ngClass]="[type, icon ? 'with-icon' : '', disabled ? 'disabled' : '']"
+  [ngClass]="[type]"
+  [class.with-icon]="icon"
+  [class.disabled]="disabled"
   class="button"
   [disabled]="disabled"
   (click)="onClick($event)"
+  (keydown.enter)="onClick($event)"
 >
 	<span class="text">
     {{ name }}
