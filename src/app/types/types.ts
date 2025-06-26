@@ -9,6 +9,7 @@ export type TagsCloudItem = {
   weight: number;
 }
 
-export type ButtonTypes = 'icon-only' | 'cta' | 'menu';
+export type ButtonTypes = 'icon-only' | 'cta' | 'menu' | 'submit';
+export type ButtonSizes = 'small' | 'medium' | 'large';
 
 export type MenuItem = string;

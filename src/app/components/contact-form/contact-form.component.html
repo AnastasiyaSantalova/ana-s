@@ -1,0 +1,57 @@
+<form *ngIf="!formValidated" [formGroup]="contactForm" novalidate>
+  <div class="name-block">
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Name *"
+      [attr.aria-invalid]="getAriaInvalid('name')"
+    />
+    <div class="error-message" [class.visible]="(formSubmitted || name?.value) && name?.invalid">
+      <small *ngIf="getErrorMessage('name') as error">{{ error }}</small>
+    </div>
+  </div>
+
+  <div class="email-block">
+    <input
+      type="email"
+      formControlName="email"
+      placeholder="Email *"
+      [attr.aria-invalid]="getAriaInvalid('email')"
+    />
+    <div
+      class="error-message"
+      [class.visible]="(formSubmitted || email?.value) && email?.invalid"
+    >
+      <small *ngIf="getErrorMessage('email') as error">{{ error }}</small>
+    </div>
+  </div>
+
+  <div class="message-block">
+    <textarea
+      formControlName="message"
+      placeholder="Your message *"
+      [attr.aria-invalid]="getAriaInvalid('message')"
+    ></textarea>
+    <div
+      class="error-message"
+      [class.visible]="(formSubmitted || message?.value) && message?.invalid"
+    >
+      <small *ngIf="getErrorMessage('message') as error">{{ error }}</small>
+    </div>
+  </div>
+
+  <app-button
+    name="Send"
+    icon="arrow-right"
+    type="submit"
+    (onButtonClick)="onSubmit()"
+  ></app-button>
+</form>
+
+<div *ngIf="formValidated" class="success-message">
+  <svg class="checkmark" viewBox="0 0 52 52">
+    <path class="checkmark__check" fill="none" stroke="#7fff9e" stroke-width="4" d="M14 27l8 8 16-16" />
+  </svg>
+  <h2 class="big-text">Thanks for reaching out!</h2>
+  <p class="small-text">I’m probably climbing a mountain or building something magical right now — I’ll get back to you soon! 😄</p>
+</div>

@@ -11,69 +11,32 @@
 	&__form, &__social-media {
 		width: 50%;
 		display: flex;
-		flex-direction: column;
+		justify-content: flex-end;
 		align-items: center;
-		justify-content: center;
-	}
-
-	&__form {
-		&_input, &_textarea {
-			width: 300px;
-			height: 35px;
-			margin-bottom: 15px;
-			padding: 0 15px;
-
-			background-color: $background-dark-purple;
-			border: none;
-			border-radius: 5px;
-
-			&::placeholder {
-				color: $background-purple;
-				text-transform: uppercase;
-				font-size: 10px;
-			}
-		}
-
-		&_textarea {
-			height: 125px;
-			padding: 10px 15px;
-		}
-
-		&_button-wrapper {
-			width: 330px;
-			display: flex;
-			justify-content: end;
-		}
 	}
 
 	&__social-media {
 		&_icons {
-			width: 150px;
-			height: 100%;
+			width: 200px;
+			height: 200px;
+      position: relative;
 
-			a:hover .contacts__social-media_icon {
-				width: 75px;
-			}
-
-			a:nth-child(1) {
-				display: block;
-				position: relative;
+			app-button:nth-child(1) {
+				position: absolute;
 				top: 0;
 				left: 0;
 			}
 
-			a:nth-child(2) {
-				display: block;
-				position: relative;
-				top: -20px;
-				left: 95px;
+			app-button:nth-child(2) {
+				position: absolute;
+				top: 50px;
+        right: 0;
 			}
 
-			a:nth-child(3) {
-				display: block;
-				position: relative;
-				top: -50px;
-				left: 10px;
+			app-button:nth-child(3) {
+				position: absolute;
+				bottom: 0;
+        left: 30px;
 			}
 		}
 

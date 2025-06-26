@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
-import { ButtonTypes } from 'src/app/types/types';
+import { ButtonSizes, ButtonTypes } from 'src/app/types/types';
 
 @Component({
 	selector: 'app-button',
@@ -9,6 +9,7 @@ import { ButtonTypes } from 'src/app/types/types';
 export class CommonButtonComponent {
 	@Input() name?: string = '';
   @Input() type?: ButtonTypes = 'cta';
+  @Input() size?: ButtonSizes = 'small';
   @Input() icon?: string = '';
   @Input() disabled?: boolean = false;
   @Output() onButtonClick = new EventEmitter();

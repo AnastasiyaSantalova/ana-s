@@ -1,6 +1,6 @@
 <button
-  type="button"
-  [ngClass]="[type]"
+  [type]="type === 'submit' ? 'submit': 'button'"
+  [ngClass]="[type, size]"
   [class.with-icon]="icon"
   [class.disabled]="disabled"
   class="button"
