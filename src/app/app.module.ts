@@ -15,6 +15,8 @@ import { SkillsPageComponent } from './pages/skills-page/skills-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
 	{ path: 'home', component: HomePageComponent },
@@ -25,18 +27,20 @@ const routes: Routes = [
 	declarations: [
 		AppComponent,
 		HomePageComponent,
-    	PortfolioPageComponent,
+    PortfolioPageComponent,
 		HeaderComponent,
 		CommonButtonComponent,
 		ModalDialogComponent,
-  SkillsPageComponent,
-  ContactsPageComponent,
-  FooterComponent,
-  CarouselComponent
+    SkillsPageComponent,
+    ContactsPageComponent,
+    FooterComponent,
+    CarouselComponent,
+    ContactFormComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
+    ReactiveFormsModule,
 		RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })
 	],
 	providers: [],

@@ -1,0 +1,102 @@
+@import "../../styles";
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+input, textarea {
+  width: 300px;
+  height: 35px;
+  padding: 0 15px;
+
+  background-color: $background-dark-purple;
+  border: none;
+  border-radius: 15px;
+
+  &::placeholder {
+    color: $font-white;
+    text-transform: lowercase;
+    font-size: 14px;
+  }
+}
+
+textarea {
+  height: 125px;
+  padding: 10px 15px;
+}
+
+.button-wrapper {
+  width: 330px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.error-message {
+  min-height: 16px;
+  max-height: 16px;
+
+  * {
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $font-error;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  &.visible {
+    * {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  perspective: 1200px;
+
+  .small-text {
+    text-align: center;
+  }
+
+  .checkmark {
+    width: 150px;
+    height: 150px;
+    display: block;
+
+    stroke: $font-success;
+    stroke-linecap: round;
+
+    transform-origin: center;
+    transform-style: preserve-3d;
+    opacity: 0;
+
+    animation: crazySpin 2s ease-out forwards;
+  }
+
+  @keyframes crazySpin {
+    0% {
+      transform: scale(0) rotateY(0deg);
+      opacity: 0;
+    }
+    70% {
+      transform: scale(1.4) rotateY(1800deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotateY(1800deg);
+      opacity: 1;
+    }
+  }
+}

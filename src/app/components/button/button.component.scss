@@ -5,8 +5,8 @@
   border: none;
 }
 
-// CTA Button
-.cta {
+// CTA Button, Submit Button
+.cta, .submit {
   padding: $btn-cta-vertical-padding $btn-cta-horizontal-padding;
   background-color: $background-purple;
   border-radius: 50px;
@@ -55,29 +55,54 @@
       }
     }
   }
+
+  &:disabled,
+  &.disabled {
+    background-color: lighten($background-purple, 20%);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 // Icon Only Button
 .icon-only {
-  @include icon('close', 1.3em);
-
   transition: transform 0.2s ease;
 
   &:hover {
     transform: scale(1.2);
   }
+
+  &.small {
+    @include icon('close', 1.3em);
+  }
+
+  &.medium {
+    @include icon('close', 3.5em);
+  }
+
+  &.large {
+    @include icon('close', 5em);
+  }
 }
 
 :host:has(.icon-only) {
-  width: 1.3em;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+:host:has(.icon-only.small) {
+  width: 1.3em;
+}
+:host:has(.icon-only.medium) {
+  width: 3.5em;
+}
+:host:has(.icon-only.large) {
+  width: 5em;
+}
 
 :host:has(.icon-only:focus) {
-  border: 2px $font-white solid;
+  outline: 2px $font-white solid;
 }
 
 // Menu Button
@@ -94,5 +119,6 @@
 
   &.disabled {
     cursor: auto;
+    pointer-events: none;
   }
 }

@@ -1,23 +1,14 @@
 <article class="contacts">
-    <form class="contacts__form">
-        <input required placeholder="your name *" class="contacts__form_input" type="text">
-        <input required placeholder="your email or phone number *" class="contacts__form_input" type="text">
-        <textarea required placeholder="message *" class="contacts__form_textarea"></textarea>
-        <span class="contacts__form_button-wrapper">
-            <app-button name="Send" icon="arrow-right"></app-button>
-        </span>
-    </form>
-    <div class="contacts__social-media">
-        <span class="contacts__social-media_icons">
-            <a href="mailto:anastazy_santa@gmail.com">
-                <img class="contacts__social-media_icon" src="../../../assets/icons/email-icon.png" alt="email">
-            </a>
-            <a href="https://github.com/AnastasiyaSantalova" target="_blank">
-                <img class="contacts__social-media_icon" src="../../../assets/icons/github-icon.png" alt="github">
-            </a>
-            <a href="https://www.linkedin.com/in/anastasiia-s-53a2191ab/" target="_blank">
-                <img class="contacts__social-media_icon" src="../../../assets/icons/linkedin-icon.png" alt="linkedin">
-            </a>
-        </span>
-    </div>
+  <app-contact-form class="contacts__form"></app-contact-form>
+  <div class="contacts__social-media">
+    <span class="contacts__social-media_icons">
+      <app-button
+        *ngFor="let item of socialButtons"
+        type="icon-only"
+        [icon]="item.icon"
+        size="large"
+        (onButtonClick)="onSocialButtonClick(item.link)"
+      ></app-button>
+    </span>
+  </div>
 </article>
