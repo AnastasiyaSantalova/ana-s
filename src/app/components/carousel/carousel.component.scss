@@ -43,6 +43,10 @@
   border-radius: 15px;
   overflow: hidden;
 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   &::before {
     content: "";
     position: absolute;

@@ -23,6 +23,7 @@ The main goal of this project is to showcase:
 - **Angular 17+**
 - **TypeScript**
 - **SCSS** (modular, custom theme variables)
+- **EmailJS** (contact form, no backend)
 - **Vercel** (hosting & continuous deployment)
 - **Responsive Layout** (Flexbox, media queries)
 - **Accessibility & Keyboard Support** (keyboard navigation, Escape to close modal, etc.)
@@ -36,7 +37,15 @@ The main goal of this project is to showcase:
 - 🔸 Smooth **scroll-to-anchor navigation**
 - 🔸 Dynamic **menu item highlighting on scroll**
 - 🔸 Fully **keyboard-accessible interface**
-- 🔸 Horizontal **project carousel** with scroll and arrow controls
+- 🔸 Horizontal **project carousel** with image backgrounds and arrow controls
+- 🔸 Contact **form powered by EmailJS** (no backend needed!)
 - 🔸 Elegant, animated **image expansion** inside modals
 - 🔸 Customized **scrollbars**, visual polish and fine UI touches
 - 🔸 Fully responsive for desktop and mobile
+
+
+---
+
+## 🛠️ Roadmap
+
+Planning to expand portfolio content, polish animations, write tests add more features.
