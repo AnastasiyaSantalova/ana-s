@@ -15,6 +15,9 @@
       (click)="onCarouselItemClick($event, item)"
       (keydown.enter)="onCarouselItemClick($event, item)"
       tabindex="0"
+      [ngStyle]="{
+        'background-image': 'url(' + item.src + ')'
+      }"
     >
       <span class="carousel-item-name">
         {{ item.name }}
