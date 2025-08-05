@@ -5,6 +5,11 @@ export const PORTFOLIO_ITEMS = [
         src: "https://anas-b1197.web.app/images/sensiya.png"
     },
     {
+        name: "Hogwarts Explorer",
+        description: "An Angular app that lets you dive into the magical world of Hogwarts. Browse spells, ingredients, and houses with powerful filters, infinite scroll, and Material UI polish. The coolest part? Dynamic themes inspired by the four Hogwarts houses—Gryffindor, Hufflepuff, Ravenclaw, and Slytherin—each with their own colors and vibes. Built with Firebase, a dash of TypeScript, and just enough magic. Mischief managed.",
+        src: "https://anas-b1197.web.app/images/hw.jpg"
+    },
+    {
         name: "SpiritUX",
         description: "SpiritUX is my homemade Angular component library — because why use boring buttons when you can craft your own? It’s a playful toolkit for building beautiful, reusable UI pieces. Devs deserve cute things too!",
         src: "https://anas-b1197.web.app/images/library.png"
